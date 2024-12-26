@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.2.1",
     "@mui/material": "^6.2.1",
@@ -16,10 +15,9 @@
     "typescript": "^3.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start --verbose",
+    "build": "craco build",
+    "test": "craco test"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@craco/craco": "^5.9.0"
+  },
+  "cracoConfig": "config/craco.config.js"
 }
