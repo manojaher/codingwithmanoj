@@ -1,4 +1,3 @@
-import { Box, Typography } from "@mui/material";
 import { BlogCard } from "./components/Card/BlogCard";
 function App() {
   return (
@@ -32,14 +31,5 @@ function App() {
     </div>
   );
 }
-
-const GridItem = () => {
-  return (
-    <Box >
-      <Typography variant="h2">Hello World</Typography>
-      <Typography variant="h6">Hello World 2</Typography>
-    </Box>
-  );
-};
 
 export default App;
