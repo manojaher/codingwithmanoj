@@ -1,0 +1,15 @@
+// Breakpoints
+$breakpoint-xs: 0px; // 0 to 599px
+$breakpoint-sm: 600px; // 600 to 899px
+$breakpoint-md: 900px; // 900 to 1199px
+$breakpoint-lg: 1200px; //1200 to 1535
+$breakpoint-xl: 1536px; // 1536 and beyond
+
+// Breakpoints
+$breakpoints: (
+  xs: 0px,
+  sm: 600px,
+  md: 900px,
+  lg: 1200px,
+  xl: 1536px
+);

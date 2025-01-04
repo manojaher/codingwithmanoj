@@ -1,14 +1,20 @@
-// Light mode colors
-$primary-light: #FFFFFF;
+// miscellaneous variables
+$primary-color: #2f3a51;
+$secondary-color: #ffffff;
+$grey-color: #f5f5f5bc;
+
+// Light Mode
+$primary-light: #ffffff;
 $secondary-light: rgba(246, 246, 247, 1);
 $tertiary-light: rgba(105, 106, 117, 1);
 $quaternary-light: rgba(75, 107, 251, 0.05);
 $background-light: #ffffff;
+$background-blue-light: rgba(75, 107, 251, 0.05);
 $text-primary-light: rgba(59, 60, 74, 1);
 $text-secondary-light: rgba(24, 26, 42, 1);
 $text-tertiary-light: rgba(75, 107, 251, 1);
 
-// Dark Mode colors
+// Dark Mode
 $primary-dark: #90caf9;
 $secondary-dark: #f48fb1;
 $tertiary-dark: #ffb74d;
@@ -16,4 +22,3 @@ $quaternary-dark: #81c784;
 $background-dark: #121212;
 $text-primary-dark: #ffffff;
 $text-secondary-dark: #bbbbbb;
-$text-tertiary-dark: #757575;

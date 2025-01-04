@@ -1,0 +1,53 @@
+@use "_breakpoints" as *;
+
+// Mixin for centering flex items
+@mixin center-flex($direction: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// Mixin for font styling
+@mixin font(
+  $size,
+  $weight: normal,
+  $line-height: 1.5,
+  $family: "Arial, sans-serif"
+) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  font-family: $family;
+}
+
+// Mixin for text ellipsis
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Mixin for line clamp
+@mixin line-clamp($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Mixin for responsive devices
+@mixin respond-to($device) {
+  $width: map-get($breakpoints, $device);
+
+  @if $device-value {
+    @media (min-width: $width) and (max-width: ($width - 1)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: map-get($devices, map-get($breakpoints, md) - 1)) and (max-width: (map-get($breakpoints, md) - 1)) {
+      @content;
+    }
+  }
+}
