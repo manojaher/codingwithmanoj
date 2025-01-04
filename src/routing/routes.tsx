@@ -1,3 +1,4 @@
+import React from 'react';
 import Home from '../pages/home/Home';
 import Blogs from '../pages/blog/Blogs';
 import Tags from '../pages/tags/Tags';

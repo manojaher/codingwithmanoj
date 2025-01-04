@@ -19,7 +19,7 @@ const Layout = () => {
 
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <NavBar /*isDarkMode={isDarkMode} toggleTheme={toggleTheme} *//>
+      {/* <NavBar isDarkMode={isDarkMode} toggleTheme={toggleTheme} /> */}
       <main>
         <Outlet />
       </main>

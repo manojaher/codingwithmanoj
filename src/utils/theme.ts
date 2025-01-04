@@ -49,13 +49,13 @@ const darkPalette = {
 
 const lightTheme = createTheme({
   palette: {
-    ...lightPalette
-  }
+    ...lightPalette,
+  },
 });
 
 const darkTheme = createTheme({
   palette: {
-    ...darkPalette
+    ...darkPalette,
   },
 });
 

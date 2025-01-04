@@ -1,5 +1,7 @@
-const Tags = () => {
-    return <div>Tags</div>
-}
+import React from 'react';
 
-export default Tags
+const Tags = () => {
+  return <div>Tags</div>;
+};
+
+export default Tags;
