@@ -1,4 +1,4 @@
-import { BlogCard } from "./components/Card/BlogCard";
+import { BlogCard } from "./components/BlogCard/BlogCard";
 function App() {
   return (
     <div
