@@ -36,7 +36,7 @@ function NavBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography variant='h6' sx={{ my: 2 }}>
         MUI
       </Typography>
       <Divider />
@@ -57,20 +57,20 @@ function NavBar(props: Props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component='nav'>
         <Toolbar>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
+            color='inherit'
+            aria-label='open drawer'
+            edge='start'
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
-            component="div"
+            variant='h6'
+            component='div'
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             MUI
@@ -88,7 +88,7 @@ function NavBar(props: Props) {
       <nav>
         <Drawer
           container={container}
-          variant="temporary"
+          variant='temporary'
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
@@ -103,7 +103,7 @@ function NavBar(props: Props) {
         </Drawer>
       </nav>
     
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component='main' sx={{ p: 3 }}>
         <Toolbar />
         <Typography>
           Lorem ipsum
