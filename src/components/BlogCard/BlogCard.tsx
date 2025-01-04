@@ -5,6 +5,7 @@ import {
   CardActionArea,
   Typography,
 } from '@mui/material';
+import React from 'react';
 
 export const BlogCard = () => {
   return (
@@ -20,14 +21,14 @@ export const BlogCard = () => {
     >
       <CardActionArea>
         <CardMedia
-          component='img'
-          image='https://cdn.pixabay.com/photo/2021/11/26/20/45/lantern-6826697_1280.jpg'
-          alt='Lantern'
+          component="img"
+          image="https://cdn.pixabay.com/photo/2021/11/26/20/45/lantern-6826697_1280.jpg"
+          alt="Lantern"
         />
         <Box sx={{ padding: '10px' }}>
           <Typography
-            variant='h5'
-            fontWeight='bold'
+            variant="h5"
+            fontWeight="bold"
             sx={{ paddingBottom: '10px' }}
           >
             Swift UI task Modifier
