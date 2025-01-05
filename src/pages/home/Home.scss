@@ -1,0 +1,6 @@
+@use '../../scss/abstracts/variables' as *;
+
+.app {
+  background-color: $background-light;
+  color: $text-primary;
+}

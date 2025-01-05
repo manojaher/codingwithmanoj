@@ -1,5 +1,4 @@
 node_modules/
 dist/
 build/
-src/pages/layout/Layout.tsx
 *.min.js

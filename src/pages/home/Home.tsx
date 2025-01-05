@@ -4,7 +4,7 @@ import { BlogCard } from '../../components/BlogCard/BlogCard';
 const Home = () => {
   return (
     <div
-      className="App"
+      className="app"
       style={{
         display: 'flex',
         justifyContent: 'center',

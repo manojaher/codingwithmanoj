@@ -14,7 +14,6 @@
     "react-dom": "18.0.0",
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
-    "tss-react": "^4.9.14",
     "typescript": "^4.8.4"
   },
   "scripts": {
@@ -56,5 +55,5 @@
     "sass-loader": "^16.0.4",
     "style-loader": "^4.0.0"
   },
-  "cracoConfig": "config/craco.config.js"
+  "cracoConfig": "craco.config.js"
 }
