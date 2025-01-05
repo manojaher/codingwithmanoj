@@ -19,7 +19,19 @@
   "scripts": {
     "start": "craco start --verbose",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      // "eslint --fix",
+      "prettier --write"
+    ]
   },
   "eslintConfig": {
     "extends": [

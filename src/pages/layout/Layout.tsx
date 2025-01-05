@@ -7,7 +7,7 @@ import { getSystemPreference } from '../../utils/getSystemPreference';
 import '@scss/themes/theme.scss';
 
 const Layout = () => {
-  const [isDarkMode] = useState(getSystemPreference);
+  const [isDarkMode, setIsDarkMode] = useState(getSystemPreference);
 
   useEffect(() => {
     document.body.className = isDarkMode ? 'dark-mode' : 'light-mode';
