@@ -24,8 +24,8 @@ const Banner = () => {
           className="downloadCV"
           variant="contained"
           size="medium"
-          href="/assets/pdf/samplePdf.pdf"
-          download="samplePdf.pdf"
+          href="/assets/pdf/Manoj_Aher_iOS _Staff_Bangalore.pdf"
+          download="Manoj_Aher_iOS _Staff_Bangalore.pdf"
         >
           Download CV
         </Button>
