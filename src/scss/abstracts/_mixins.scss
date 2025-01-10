@@ -1,4 +1,4 @@
-@use "_breakpoints" as *;
+@use '_breakpoints' as *;
 
 // Mixin for centering flex items
 @mixin center-flex($direction: row, $align: center, $justify: center) {
@@ -13,7 +13,7 @@
   $size,
   $weight: normal,
   $line-height: 1.5,
-  $family: "Arial, sans-serif"
+  $family: 'Arial, sans-serif'
 ) {
   font-size: $size;
   font-weight: $weight;

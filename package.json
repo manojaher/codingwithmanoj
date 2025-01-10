@@ -20,7 +20,10 @@
     "start": "craco start --verbose",
     "build": "craco build",
     "test": "craco test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
