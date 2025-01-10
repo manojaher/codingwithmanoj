@@ -11,20 +11,11 @@ interface ListItemModel {
 const NavItems: React.FC<ListItemModel> = ({ title, path }) => {
   const navigateTo = useNavigateTo();
   return (
-    <ListItem
-      className="listItem"
-      key={title}
-      disablePadding
-      sx={{ background: 'green' }}
-    >
-      <ListItemButton
-        onClick={() => navigateTo(path)}
-        sx={{ background: 'blue' }}
-      >
+    <ListItem className="listItem" key={title} disablePadding>
+      <ListItemButton onClick={() => navigateTo(path)}>
         <ListItemText
           primary={title}
           sx={{
-            background: 'brown',
             padding: '0px',
             display: 'flex',
             maxLines: 1,

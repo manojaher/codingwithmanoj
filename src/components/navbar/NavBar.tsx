@@ -1,9 +1,10 @@
-import { AppBar, List, Toolbar, Container } from '@mui/material';
+import { AppBar, List, Toolbar, Container, Box } from '@mui/material';
 import React from 'react';
 import NavItems from './NavItems';
 import routes from './../../routing/routes';
 import { useNavigateTo } from '@/hooks/useNavigateTo';
 import { NavBarLogo } from './NavBarLogo';
+import { centered } from '@/styles/styling';
 
 interface Props {
   isDarkMode: boolean;
@@ -18,23 +19,26 @@ const NavBar: React.FC<Props> = ({ isDarkMode, toggleTheme }) => {
       className="navbar"
       position="sticky"
       elevation={2}
-      sx={{ background: 'red', flexDirection: 'row', height: '100px' }}
+      sx={{ flexDirection: 'row', height: '100px' }}
     >
       <Toolbar
         className="toolbar"
         sx={{
           display: 'flex',
-          flexGrow: '1',
-          background: 'blue',
+          flexGrow: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
+        disableGutters
       >
-        <Container
+        <Box
           className="container"
           sx={{
             display: 'flex',
-            background: 'yellow',
-            justifyContent: 'space-between',
-            width: '100%',
+            alignItems: 'center',
+            justifyContent: { xs: 'center', sm: 'center', md: 'space-between' },
+            flexGrow: 1, // Allow the container to grow to the maximum size of its parent
+            maxWidth: '80vw',
           }}
         >
           <NavBarLogo
@@ -45,8 +49,7 @@ const NavBar: React.FC<Props> = ({ isDarkMode, toggleTheme }) => {
           <List
             className="navList"
             sx={{
-              background: 'yellow',
-              display: 'flex',
+              display: { xs: 'none', md: 'flex' }, // Hide the list on medium devices and below
               flexDirection: 'row',
               justifyContent: 'flex-end', // Align the list to the right
             }}
@@ -55,7 +58,7 @@ const NavBar: React.FC<Props> = ({ isDarkMode, toggleTheme }) => {
               <NavItems title={route.name} path={route.path} key={route.path} />
             ))}
           </List>
-        </Container>
+        </Box>
       </Toolbar>
     </AppBar>
   );
