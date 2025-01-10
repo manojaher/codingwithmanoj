@@ -16,15 +16,16 @@ const Home = () => {
         className="grid-container"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 300px))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 250px))',
           maxWidth: '80vw',
           minWidth: '0vh',
           justifyContent: 'center',
           alignItems: 'center',
           gap: '40px',
+          marginTop: '40px',
         }}
       >
-        {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 11 }).map((_, index) => (
           <BlogCard key={index} />
         ))}
       </div>
