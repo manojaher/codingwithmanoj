@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
 import { darkTheme, lightTheme } from '../../utils/theme';
-import { getSystemPreference } from '../../utils/getSystemPreference';
 import NavBar from '@/components/navbar/NavBar';
-import '@scss/themes/theme.scss';
+import { getSystemPreference } from '@/utils/getSystemPreference';
+import Footer from '@/components/footer/Footer';
 
 const Layout = () => {
   const [isDarkMode, setIsDarkMode] = useState(getSystemPreference);
@@ -24,7 +24,7 @@ const Layout = () => {
       <main>
         <Outlet />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </ThemeProvider>
   );
 };

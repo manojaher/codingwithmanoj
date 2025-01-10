@@ -1,35 +1,14 @@
 import React from 'react';
-import { BlogCard } from '../../components/BlogCard/BlogCard';
+import { Container } from '@mui/material';
+import Banner from '@/components/banner/Banner';
+import ContentRail from '@/components/contentRail/ContentRail';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
-    <div
-      className="app"
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
-      }}
-    >
-      <div
-        className="grid-container"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(50px, 250px))',
-          maxWidth: '80vw',
-          minWidth: '0vh',
-          justifyContent: 'center',
-          alignItems: 'center',
-          gap: '40px',
-          marginTop: '40px',
-        }}
-      >
-        {Array.from({ length: 11 }).map((_, index) => (
-          <BlogCard key={index} />
-        ))}
-      </div>
-    </div>
+    <Container className="home">
+      <Banner />
+      <ContentRail />
+    </Container>
   );
 };
 

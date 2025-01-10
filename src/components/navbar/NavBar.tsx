@@ -1,65 +1,102 @@
-import { AppBar, List, Toolbar, Container, Box } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import NavItems from './NavItems';
-import routes from './../../routing/routes';
-import { useNavigateTo } from '@/hooks/useNavigateTo';
-import { NavBarLogo } from './NavBarLogo';
-import { centered } from '@/styles/styling';
+import {
+  AppBar,
+  Container,
+  Drawer,
+  IconButton,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import AdbIcon from '@mui/icons-material/Adb';
+import { useNavigateTo } from '../../hooks/useNavigateTo';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import CloseIcon from '@mui/icons-material/Close';
 
-interface Props {
+interface NavBarProps {
   isDarkMode: boolean;
   toggleTheme: () => void;
 }
 
-const NavBar: React.FC<Props> = ({ isDarkMode, toggleTheme }) => {
-  const navigateTo = useNavigateTo();
+const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleTheme }) => {
+  const navigate = useNavigateTo();
+  const container =
+    window !== undefined ? () => window.document.body : undefined;
+
+  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+
+  const handleDrawerToggle = () => {
+    setIsDrawerOpen((prevState: boolean) => !prevState);
+  };
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+
   return (
-    <AppBar
-      component="nav"
-      className="navbar"
-      position="sticky"
-      elevation={2}
-      sx={{ flexDirection: 'row', height: '100px' }}
-    >
-      <Toolbar
-        className="toolbar"
-        sx={{
-          display: 'flex',
-          flexGrow: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-        disableGutters
-      >
-        <Box
-          className="container"
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: { xs: 'center', sm: 'center', md: 'space-between' },
-            flexGrow: 1, // Allow the container to grow to the maximum size of its parent
-            maxWidth: '80vw',
-          }}
-        >
-          <NavBarLogo
-            onClick={() => {
-              navigateTo('/');
-            }}
-          />
-          <List
-            className="navList"
-            sx={{
-              display: { xs: 'none', md: 'flex' }, // Hide the list on medium devices and below
-              flexDirection: 'row',
-              justifyContent: 'flex-end', // Align the list to the right
-            }}
+    <AppBar position="static" component="nav" className="navbar" elevation={0}>
+      <Container className="container">
+        <Toolbar className="logo">
+          <AdbIcon color="inherit" />
+          <Typography
+            className="logoText"
+            component="a"
+            onClick={() => navigate('')}
           >
-            {routes.map((route) => (
-              <NavItems title={route.name} path={route.path} key={route.path} />
-            ))}
-          </List>
-        </Box>
-      </Toolbar>
+            Aher <b>Manoj</b>
+          </Typography>
+        </Toolbar>
+        {isMdUp ? (
+          <NavItems />
+        ) : (
+          <>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              className="menuBtn"
+              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+            >
+              <MenuIcon />
+            </IconButton>
+
+            <Drawer
+              container={container}
+              variant="temporary"
+              open={isDrawerOpen}
+              anchor="right"
+              ModalProps={{
+                keepMounted: true,
+              }}
+              sx={{
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+              }}
+              onClose={handleDrawerToggle}
+              className="drawer"
+            >
+              <Toolbar sx={{ justifyContent: 'space-between' }}>
+                <IconButton onClick={toggleTheme} color="inherit">
+                  {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
+                </IconButton>
+                <IconButton
+                  aria-label="close drawer"
+                  color="inherit"
+                  onClick={handleDrawerToggle}
+                >
+                  <CloseIcon />
+                </IconButton>
+              </Toolbar>
+              <NavItems />
+            </Drawer>
+          </>
+        )}
+        {isMdUp && (
+          <IconButton onClick={toggleTheme} color="inherit">
+            {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
+          </IconButton>
+        )}
+      </Container>
     </AppBar>
   );
 };

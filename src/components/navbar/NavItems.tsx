@@ -1,28 +1,33 @@
 import React from 'react';
 import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { useNavigateTo } from '@/hooks/useNavigateTo';
+import { FC } from 'react';
 import routes from '@/routing/routes';
+import { useLocation } from 'react-router-dom';
+import { useNavigateTo } from '@/hooks/useNavigateTo';
 
-interface ListItemModel {
-  title: string;
-  path: string;
-}
-
-const NavItems: React.FC<ListItemModel> = ({ title, path }) => {
-  const navigateTo = useNavigateTo();
+const NavItems: FC = () => {
+  const navigate = useNavigateTo();
+  const location = useLocation();
   return (
-    <ListItem className="listItem" key={title} disablePadding>
-      <ListItemButton onClick={() => navigateTo(path)}>
-        <ListItemText
-          primary={title}
-          sx={{
-            padding: '0px',
-            display: 'flex',
-            maxLines: 1,
-          }}
-        />
-      </ListItemButton>
-    </ListItem>
+    <List className="navItemList">
+      {routes.map(
+        ({ path, name, hidden }) =>
+          !hidden && (
+            <ListItem key={name} disablePadding>
+              <ListItemButton
+                onClick={() => navigate(path)}
+                className={location.pathname === path ? 'active' : ''}
+              >
+                <ListItemText
+                  sx={{ textAlign: { sm: 'center' } }}
+                  className="navItemText"
+                  primary={name}
+                />
+              </ListItemButton>
+            </ListItem>
+          )
+      )}
+    </List>
   );
 };
 
