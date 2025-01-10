@@ -1,0 +1,36 @@
+@use '../abstracts/fonts' as *;
+
+.banner {
+  margin-bottom: 3rem;
+  justify-content: 'space-evenly';
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--secondary);
+  border-radius: 12px;
+  font-family: $font-family-system;
+  font-weight: $font-weight-regular;
+
+  .avatarContainer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: large;
+
+    .role {
+      font-size: small;
+      font-weight: $font-weight-light;
+    }
+  }
+
+  .content {
+    text-align: center;
+    width: 90vw;
+    color: var(--tertiary);
+  }
+
+  .downloadCV {
+    background-color: var(--tertiary);
+    color: var(--tertiary);
+  }
+}
