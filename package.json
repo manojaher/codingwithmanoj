@@ -21,7 +21,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint ."
   },
   "husky": {
     "hooks": {

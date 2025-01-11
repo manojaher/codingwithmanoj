@@ -41,7 +41,7 @@
 @mixin respond-to($device) {
   $width: map-get($breakpoints, $device);
 
-  @if $device-value {
+  @if $device {
     @media (min-width: $width) and (max-width: ($width - 1)) {
       @content;
     }
