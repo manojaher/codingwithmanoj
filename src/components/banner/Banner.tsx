@@ -1,11 +1,10 @@
-import React from 'react';
 import { Avatar, Box, Button, Grid2, Stack, Typography } from '@mui/material';
 
 const Banner = () => {
   return (
     <Grid2 container className="banner" spacing={4}>
       <Stack className="avatarContainer">
-        <Avatar className="avatar" src="/assets/images/manoj.jpg" />
+        <Avatar className="avatar" src="/assets/images/ProfilePicture.jpg" />
         <Box>
           <b>Manoj Aher</b>
           <Typography className="role">Collaborator & Editor</Typography>

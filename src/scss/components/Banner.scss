@@ -2,7 +2,7 @@
 
 .banner {
   margin-bottom: 3rem;
-  justify-content: 'space-evenly';
+  justify-content: space-evenly;
   align-items: center;
   padding: 1rem;
   background-color: var(--secondary);
@@ -31,6 +31,6 @@
 
   .downloadCV {
     background-color: var(--tertiary);
-    color: var(--tertiary);
+    color: var(--primary);
   }
 }
